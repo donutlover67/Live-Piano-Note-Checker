@@ -5,6 +5,8 @@ Two questions are answered separately:
   WHICH note was it?        -> pitch detection
 """
 
+import warnings
+
 import librosa
 import numpy as np
 
@@ -24,8 +26,13 @@ def detect_onsets(audio: np.ndarray, sample_rate: int) -> np.ndarray:
     We then pick the peaks that rise more than config.ONSET_DELTA above their
     surroundings. A smaller delta means more sensitivity.
     """
-    strength = librosa.onset.onset_strength(y=audio, sr=sample_rate,
-                                            hop_length=config.HOP_LENGTH)
+    with warnings.catch_warnings():
+        # A recording shorter than librosa's analysis window (a take of under 0.1 s) makes it
+        # print a harmless "n_fft is too large" warning. We hide only that one message; the
+        # result is simply "no notes", which the user is told about in plain words.
+        warnings.filterwarnings("ignore", message="n_fft=.*too large", category=UserWarning)
+        strength = librosa.onset.onset_strength(y=audio, sr=sample_rate,
+                                                hop_length=config.HOP_LENGTH)
     return librosa.onset.onset_detect(onset_envelope=strength, sr=sample_rate,
                                       hop_length=config.HOP_LENGTH,
                                       delta=config.ONSET_DELTA, units="time")
