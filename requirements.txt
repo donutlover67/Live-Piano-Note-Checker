@@ -1,0 +1,8 @@
+music21>=10.5
+librosa>=1.0
+numpy>=2.0
+scipy>=1.14
+sounddevice>=0.5
+soundfile>=0.13
+requests>=2.32
+pytest>=9.0

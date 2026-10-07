@@ -1,0 +1,28 @@
+# Audio recordings, saved sessions and diagnose takes (can contain your own playing)
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.aiff
+*.aif
+*.session
+sessions/
+diagnose_takes/
+last_recording.wav
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Editor settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
