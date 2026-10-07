@@ -43,7 +43,7 @@ From the project folder (the one that contains the `evenkeys/` package):
 python -m evenkeys
 ```
 
-Or, in VS Code, press **Run** on `run.py` in the project folder (or type `python run.py`). Do not press Run on `evenkeys/__main__.py`: it only works when started with `-m`.
+Or, in VS Code, press **Run** on `evenkeys/__main__.py` or on `run.py` in the project folder (or type `python run.py`). Both start the same program.
 
 The program then walks you through:
 
@@ -225,7 +225,7 @@ real piano, so accuracy on real recordings is untested. See limitations.
 ## Project layout
 
 ```
-run.py               launcher: press Run on this file in VS Code
+run.py               optional launcher (same as python -m evenkeys)
 evenkeys/            the package (run with python -m evenkeys)
   config.py          settings
   models.py          the small data types
