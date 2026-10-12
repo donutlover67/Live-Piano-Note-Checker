@@ -5,7 +5,7 @@ one hand's part on a piano, and it listens through your computer's microphone. I
 you which notes were wrong or missed, and, if the music has a tempo marking, how well you
 kept time.
 
-Example output (from synthetic audio with a planted missed note, a planted wrong note and a gradual slow-down):
+Example output (from audio with a missed note, a wrong note and a gradual slow-down):
 
 ```
 Notes correct: 12 / 14 (86%)
