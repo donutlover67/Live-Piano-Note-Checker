@@ -201,10 +201,7 @@ real piano, so accuracy on real recordings is untested. See limitations.
   differ; adjust `ONSET_DELTA` and play close to the microphone.
 - **Time resolution is about 23 ms** (one analysis frame), so very small timing errors
   can't be measured.
-- **Ambiguous cases in alignment.** A wrong note placed right next to an extra note can't be
-  told apart from each other (either could be "the wrong one"). With several identical notes
-  in a row, if one is missed, the count is right but the reported position among them may
-  be off by one.
+-
 - **Very fast passages.** On clean synthetic audio, a run of sixteenth notes was exact up to 160 BPM, but at 180 BPM (a note every 0.083 s) 3 of 28 notes were mislabelled. On a real piano it will be worse.
 - **Pitch detection** looks for notes from A1 to C8 (lower notes are not detected) with a 46 ms analysis window, which is least
   reliable for the lowest notes. Real piano low notes have a weak fundamental, which can
