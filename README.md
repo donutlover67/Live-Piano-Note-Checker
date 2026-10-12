@@ -210,14 +210,6 @@ real piano, so accuracy on real recordings is untested. See limitations.
   sheet music for passages that cross it. Files with more than two note tracks use only the
   first two. MusicXML files with only one staff have no left hand.
 - **Measure ranges and repeats.** Choosing the whole piece plays every repeat. For a range like `1-4`, a repeat is played only if the measure holding its repeat sign is inside the range (for example, a section repeated by a sign on measure 8 is played twice in `1-8` but once in `1-4`). The measure count shown is the number printed on the sheet. If a range includes a repeat sign but only part of the repeated section, the skipped measures are left out of the timing, so you are not marked for silence you never waited through (real rests are kept). A pickup measure is measure 0, so type `0-4` to include it. Repeat detection looks for measure numbers jumping backwards, which covers normal repeats and endings; unusual jumps (D.C., D.S., codas) are handled by music21's expansion but are not tested here.
-- **Repeats** are expanded when music21 can do it. If it can't, the piece is played through as
-  written, with no repeats, and measure numbers on repeated passes are the sheet's numbers.
-- **Not handled:** grace notes (skipped), trills and ornaments, and recordings with several
-  instruments.
-- **Alignment time** grows with (notes played × notes expected); I only tested pieces of a
-  few dozen notes.
-- The first analysis in a session takes a few seconds longer while librosa prepares itself.
-- Only the default microphone is used.
 
 ## Project layout
 
